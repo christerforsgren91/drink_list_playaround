@@ -8,7 +8,6 @@ describe('User can see main page layout', () => {
 
   it('is expected to show header', () => {
     cy.get('[data-cy=logo]').should('exist')
-    cy.get('[data-cy=site-name]').should('contain', 'Shake And Make')
   })
 
   it('is expected to show list of drinks', () => {
