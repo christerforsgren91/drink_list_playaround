@@ -24,14 +24,14 @@ const DrinkCard = () => {
 
   let drinkList = drinks.map((drink) => {
     return (
-      <Card data-cy="drink-card">
-        <CardActionArea>
-          <img src={drink.strDrinkThumb} alt="drinks" />
-          <div>
-            <Typography data-cy="name">{drink.strDrink}</Typography>
+      <div className='container' >
+        <div data-cy="drink-card">
+          <div className="card">
+            <img className="drink" src={drink.strDrinkThumb} alt="drinks" />
+            <p data-cy="name">{drink.strDrink}</p>
           </div>
-        </CardActionArea>
-      </Card>
+        </div>
+      </div>
     )
   })
 
