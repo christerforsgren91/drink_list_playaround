@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import { makeStyles } from '@material-ui/core/styles'
+import Card from '@material-ui/core/Card'
+import CardActionArea from '@material-ui/core/CardActionArea'
+import CardActions from '@material-ui/core/CardActions'
+import CardContent from '@material-ui/core/CardContent'
+import CardMedia from '@material-ui/core/CardMedia'
+import Typography from '@material-ui/core/Typography'
 
 const DrinkCard = () => {
   const [drinks, setDrinks] = useState([])
@@ -17,12 +24,14 @@ const DrinkCard = () => {
 
   let drinkList = drinks.map((drink) => {
     return (
-      <div data-cy="drink-card">
-        <img src={drink.strDrinkThumb} alt="drinks" />
-        <div>
-          <p>{drink.strDrink}</p>
-        </div>
-      </div>
+      <Card data-cy="drink-card">
+        <CardActionArea>
+          <img src={drink.strDrinkThumb} alt="drinks" />
+          <div>
+            <Typography data-cy="name">{drink.strDrink}</Typography>
+          </div>
+        </CardActionArea>
+      </Card>
     )
   })
 
