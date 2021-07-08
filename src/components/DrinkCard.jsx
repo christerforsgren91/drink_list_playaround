@@ -4,7 +4,7 @@ import axios from 'axios'
 const DrinkCard = () => {
   const [drinks, setDrinks] = useState([])
 
-  const getShows = async () => {
+  const fetchDrinks = async () => {
     const response = await axios.get(
       'www.thecocktaildb.com/api/json/v1/1/search.php?s'
     )
@@ -12,13 +12,16 @@ const DrinkCard = () => {
   }
 
   useEffect(() => {
-    getShows()
+    fetchDrinks()
   }, [])
 
-  let drinkList = drinks.map((show) => {
+  let drinkList = drinks.map((drink) => {
     return (
       <div data-cy="drink-card">
-        <img src={show.strDrinkThumb} alt="drinks" />
+        <div>
+          <p>{drink.strDrink}</p>
+        </div>
+        <img src={drink.strDrinkThumb} alt="drinks" />
       </div>
     )
   })
