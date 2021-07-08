@@ -18,10 +18,10 @@ const DrinkCard = () => {
   let drinkList = drinks.map((drink) => {
     return (
       <div data-cy="drink-card">
+        <img src={drink.strDrinkThumb} alt="drinks" />
         <div>
           <p>{drink.strDrink}</p>
         </div>
-        <img src={drink.strDrinkThumb} alt="drinks" />
       </div>
     )
   })
