@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { makeStyles } from '@material-ui/core/styles'
-import Card from '@material-ui/core/Card'
-import CardActionArea from '@material-ui/core/CardActionArea'
-import CardActions from '@material-ui/core/CardActions'
-import CardContent from '@material-ui/core/CardContent'
-import CardMedia from '@material-ui/core/CardMedia'
-import Typography from '@material-ui/core/Typography'
+import { Card, CardGroup } from 'react-bootstrap'
 
 const DrinkCard = () => {
   const [drinks, setDrinks] = useState([])
@@ -22,20 +16,22 @@ const DrinkCard = () => {
     fetchDrinks()
   }, [])
 
-  let drinkList = drinks.map((drink) => {
+  let drinkList = drinks.map((drink, index) => {
     return (
-      <div className='container' >
-        <div data-cy="drink-card">
-          <div className="card">
-            <img className="drink" src={drink.strDrinkThumb} alt="drinks" />
-            <p data-cy="name">{drink.strDrink}</p>
-          </div>
-        </div>
-      </div>
+      <CardGroup key={index} style={{ width: '17rem' }}>
+        <Card data-cy="drink-card" className="card">
+          <Card.Img variant="top" src={drink.strDrinkThumb} />
+          <Card.Title data-cy="name">{drink.strDrink}</Card.Title>
+        </Card>
+      </CardGroup>
     )
   })
 
-  return <div>{drinkList}</div>
+  return (
+    <div className="container">
+      <div className="row">{drinkList}</div>
+    </div>
+  )
 }
 
 export default DrinkCard

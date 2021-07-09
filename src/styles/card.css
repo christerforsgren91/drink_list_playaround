@@ -1,21 +1,12 @@
+.container {
+  padding-top: 100px;
+}
 .card {
-  float: left;
-  max-width: 300px;
-  margin: 2px;
-  border: 1px solid lightgrey;
-  background-color: white;
   text-align: center;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  justify-items: center;
-  align-items: center;
-  display: inline-block;
+  margin: 5px;
 }
 .card:hover {
-  transform: scale(1.03);
-  opacity: 90%;
-}
-.drink {
-  object-fit: cover;
-  width: 300px;
-  height: 100%;
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.02);
+  opacity: 85%;
 }
