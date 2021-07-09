@@ -1,10 +1,13 @@
 import React from 'react'
+import DrinkCard from './components/DrinkCard'
+import Header from './components/Header'
 
 const App = () => {
   return (
-    <div>
-      yo make a drink?
-    </div>
+    <>
+      <Header />
+      <DrinkCard />
+    </>
   )
 }
 
